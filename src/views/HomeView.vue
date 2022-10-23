@@ -1,11 +1,18 @@
 <template>
-    <div>
-        <h1 class="text-3xl">9usfw</h1>
+    <div class="flex h-full border-t">
+        <div class="w-3/12 flex-shrink-0 border-r"></div>
+        <Chatbox />
+        <div class="w-3/12 flex-shrink-0 border-l">
+        </div>
     </div>
 </template>
 
 <script>
-export default {
+import Chatbox from "@/components/Chatbox.vue"
 
+export default {
+    components: { Chatbox },
 }
+
+
 </script>
