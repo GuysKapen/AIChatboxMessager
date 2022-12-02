@@ -156,14 +156,13 @@ import ChatBody from '@/components/ChatBody.vue'
 import Nav from '@/components/Nav.vue'
 import { v4 as uuidv4 } from 'uuid';
 import { createToast } from 'mosha-vue-toastify';
-import { mapState } from "pinia";
 import axios from 'axios';
 const serverUrl = import.meta.env.VITE_SERVER_URL;
 export default {
     components: { ChatBody, Nav },
     data() {
-        const userId = uuidv4()
-        return { activeConversation: { conversationId: userId }, conversations: [], userId: userId, user: { name: "Anonymouse" } }
+        const userId = "8e493464-5db5-47ce-8ca3-900c7b1ec0d1"
+        return { activeConversation: null, conversations: [], userId: userId, user: { name: "Anonymouse" } }
     },
     async mounted() {
         try {
