@@ -63,6 +63,20 @@
                   <div class="prose text-xs" v-html="custom['html']">
                   </div>
                 </template>
+                <template v-else-if="custom && custom['image']">
+                  <template v-if="(custom && custom['carousel'])">
+                    <p class="py-3">Here are carousel images</p>
+                    <div class="flex space-x-4">
+                      <div class="rounded-md overflow-hidden" v-for="(image, idx) in custom['carousel']" :key="idx">
+                        <img :src="('data:image/png;base64, ' + image)" alt="image-bot-generated" />
+                      </div>
+                    </div>
+                  </template>
+                  <p class="py-3">Here is the final result</p>
+                  <div>
+                    <img :src="('data:image/png;base64, ' + custom['image'])" alt="image-bot-generated" />
+                  </div>
+                </template>
                 <template v-else>
                   {{ message }}
                 </template>
